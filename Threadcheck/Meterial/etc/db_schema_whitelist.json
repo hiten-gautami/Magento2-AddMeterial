@@ -1,0 +1,14 @@
+{
+    "material": {
+        "column": {
+            "id": true,
+            "product_id": true,
+            "title": true,
+            "color": true,
+            "percentage": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

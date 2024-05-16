@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="material" resource="default" engine="innodb" comment="Threadcheck Material">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="id"/>
+        <column xsi:type="int" name="product_id" unsigned="true" nullable="true" identity="false" default="0" comment="Product Id"/>
+        <column xsi:type="varchar" length="500" name="title" nullable="true" comment="Title"/>
+        <column xsi:type="varchar" length="500" name="color" nullable="true" comment="Color"/>
+        <column xsi:type="varchar" length="500" name="percentage" nullable="true" comment="percentage"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
