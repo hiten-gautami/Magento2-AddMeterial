@@ -1,0 +1,35 @@
+<?php
+    // get current product data
+    $product = $block->getProduct()->getId();
+    $blockObj= $block->getLayout()->createBlock('Elsnertech\Meterial\Block\Material');
+    $getSavedMaterial = $blockObj->getSavedMaterial();
+    $countvalue = 0;
+    if (count($getSavedMaterial)) {
+        $titles = $getSavedMaterial['title'];
+        $color = $getSavedMaterial['color'];
+        $per = $getSavedMaterial['per'];
+        if (count($titles) > 0) {
+            $countvalue  = count($titles);
+        }
+    }
+
+    ?>
+    <?php if (isset($titles)): ?>  
+    <table class="data table additional-attributes" id="product-attribute-specs-table">
+            <caption class="table-caption">Material</caption>
+
+    <tbody>
+    <?php    
+        $i = 0;
+        $j = 1;
+        foreach ($titles as $title) { ?>
+                <tr>
+                    <th class="col label" scope="row"><?= $title ?></th>
+                    <td style="width: 20px; background-color: <?= $color[$i] ?>;" class="col data" data-th="<?= $color[$i] ?>"></td>
+                    <td class="col data" data-th="per"><?= $per[$i] ?>%</td>
+                </tr>
+        <?php $i++; ?>
+        <?php $j++; ?>
+    <?php } ?>
+    </tbody></table>
+        <?php endif ?>  
